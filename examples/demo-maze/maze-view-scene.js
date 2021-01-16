@@ -5,8 +5,8 @@
 
 import {
   MAZEGEN
-// } from 'https://cdn.jsdelivr.net/npm/@mitchallen/three-maze-generator@0.1.0/dist/three-maze-generator.modern.js'
-} from '../../dist/three-maze-generator.modern.js';
+} from 'https://cdn.jsdelivr.net/npm/@mitchallen/three-maze-generator@0.1.0/dist/three-maze-generator.modern.js'
+// } from '../../dist/three-maze-generator.modern.js';
 
 import {
   XRKIT,
@@ -47,7 +47,7 @@ export class MazeViewSceneFactory {
     let textureList = [
       // { key: '', file: '' },
       // Select
-      { key: 'mazeWall', file: `/img/arrow-left-blue.png` },
+      { key: 'mazeWall', file: `./img/arrow-left-blue.png` },
     ];
 
     // Load textures

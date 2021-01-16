@@ -44,14 +44,26 @@ For example, from within your **app.js** file:
 ```js
 import {
   MAZEGEN,
-} from 'https://cdn.jsdelivr.net/npm/@mitchallen/three-maze-generator@0.1.0/dist/three-maze-generator.modern.js'
+} from 'https://cdn.jsdelivr.net/npm/@mitchallen/three-maze-generator@0.1.1/dist/three-maze-generator.modern.js'
 ```
 
 * * *
 
 # Example code
 
-See the repo examples folder.
+See the repo examples folder. 
+
+## To run the example code
+
+To run the example code go to the root of this project and run:
+
+```
+npm run web-server
+```
+
+Then browse to:
+
+* http://localhost:8000/examples/demo-maze/
 
 * * *
 

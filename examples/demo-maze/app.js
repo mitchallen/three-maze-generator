@@ -1,3 +1,8 @@
+/*
+ * File: app.js
+ * Author: Mitch Allen
+ */
+
 // 1. Add reminder for how to reference the script
 /*
   In a browser must use script type="module" parameter:

@@ -1,3 +1,7 @@
+/*
+ * File: maze-shapes.js
+ * Author: Mitch Allen
+ */
 
 export class MazeShapeFactory {
 
