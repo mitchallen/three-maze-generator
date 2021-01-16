@@ -1,0 +1,30 @@
+{
+  "name": "@mitchallen/three-maze-generator",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/three-maze-generator.js",
+  "module": "dist/three-maze-generator.js",
+  "source": "src/three-maze-generator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "web-server": "python -m SimpleHTTPServer $PORT || 8000",
+    "inuse": "lsof -i :8000",
+    "// preversion": "npm run dist && npm test",
+    "preversion": "npm run dist",
+    "dev": "microbundle watch",
+    "dist": "microbundle",
+    "version": "git add -A dist",
+    "postversion": "git push && git push --tags && npm publish",
+    "pub:patch": "npm version patch -m 'Upgrade to %s for reasons'"
+  },
+  "keywords": [],
+  "author": "Mitch Allen",
+  "license": "MIT",
+  "devDependencies": {
+    "microbundle": "^0.12.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mitchallen/three-maze-generator.git"
+  }
+}
