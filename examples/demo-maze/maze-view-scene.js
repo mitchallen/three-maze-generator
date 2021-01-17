@@ -5,8 +5,8 @@
 
 import {
   MAZEGEN
-} from 'https://cdn.jsdelivr.net/npm/@mitchallen/three-maze-generator@0.1.1/dist/three-maze-generator.modern.js'
-// } from '../../dist/three-maze-generator.modern.js';
+// } from 'https://cdn.jsdelivr.net/npm/@mitchallen/three-maze-generator@0.1.2/dist/three-maze-generator.modern.js'
+} from '../../dist/three-maze-generator.modern.js';
 
 import {
   XRKIT,
@@ -58,6 +58,9 @@ export class MazeViewSceneFactory {
 
       let mazeOptions = MAZEGEN.createMaze({
         wallTexture: textureMap['mazeWall'],
+        // showSolution: false,
+        // showStart: false,
+        // showFinish: false,
       });
   
       // Grid layout parameters
@@ -161,6 +164,11 @@ export class MazeViewSceneFactory {
         scene.traverse(function (node) {
           if( node.name === "maze") {
 
+          }
+          if( node.tag === "maze-finish") {
+            // node.rotation.x += 0.01;
+            // node.rotation.y += 0.02;
+            // node.rotation.z += 0.03;
           }
           if (node.name === "world") {
             const rightSelect = selectPressed['right'] ? 1 : 0;

@@ -10,7 +10,17 @@ export class MAZEGEN {
       wallDepth = 1,
       wallHeight = 1,
       wallTexture,
-      capHeight = 0,
+      capY = 0,
+      capHeight = 1.1,
+      capRadius = 0.5,   
+      capColor = "#444444",
+      startColor = "#FFFFFF",
+      endColor = "#FF0000",
+      solutionColor = "#00FF00",
+      showStart = true,
+      showFinish = true,
+      showSolution = true,
+      solutionScale = 0.25,
     } = spec;
 
     let wallNodes = [];
@@ -48,27 +58,37 @@ export class MAZEGEN {
 
         endCaps.push({
           x: xPos + cellSize / 2.0,
-          y: capHeight,
+          y: capY,
           z: zPos + cellSize / 2.0,
-          color: "#444444",
-          radius: 0.5,  // TODO - get from spec
-          height: 1.1,  // TODO - get from spec
+          color: capColor,
+          radius: capRadius,  
+          height: capHeight,  
         });
 
-        if( maze.isGreen(x,y)) {
-          // show solution
-          let color = (x === dx && y === dy ) ? "#FF0000" : ((x === 0 && y === 0 ) ? "#FFFFFF" : "#00FF00" );
-          let gScale = (x === dx && y === dy ) ? 1.0 : ((x === 0 && y === 0 ) ? 1.0 : 0.25 );
-          wallNodes.push({
-            x: xPos,
-            y: yPos,
-            z: zPos,
-            width: gScale,
-            height: 0.5,
-            depth: gScale,
-            color,
-          });
-
+          if (maze.isGreen(x, y)) {
+            let isStartPos = (x === 0 && y === 0);
+            let isEndPos = (x === dx && y === dy);
+            let isSolutionPos = (!isStartPos && !isEndPos);
+            // show solution
+            let color = isEndPos ? endColor : ( isStartPos ? startColor : solutionColor );
+            let gScale = isEndPos ? 1.0 : ( isStartPos ? 1.0 : solutionScale);
+            let tag = isStartPos ? "maze-start" : isEndPos ? "maze-finish" : "maze-solution";
+            if(
+              (isSolutionPos && showSolution)
+              || (isStartPos && showStart)
+              || (isEndPos && showFinish)
+            ) {
+              wallNodes.push({
+                tag,
+                x: xPos,
+                y: yPos,
+                z: zPos,
+                width: gScale,
+                height: 0.5,
+                depth: gScale,
+                color,
+              });
+            }
         }
 
         if (!maze.connects(x, y, "S") && x >= 0 &&
