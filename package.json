@@ -1,6 +1,6 @@
 {
   "name": "@mitchallen/three-maze-generator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "main": "dist/three-maze-generator.js",
   "module": "dist/three-maze-generator.js",
