@@ -7,7 +7,8 @@
   "source": "src/three-maze-generator.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "web-server": "python -m SimpleHTTPServer $PORT || 8000",
+    "web-server-archive": "python -m SimpleHTTPServer $PORT || 8000",
+    "web-server": "python3 -m http.server 8000",
     "inuse": "lsof -i :8000",
     "// preversion": "npm run dist && npm test",
     "preversion": "npm run dist",
