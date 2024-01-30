@@ -5,8 +5,8 @@
 
 import {
   MAZEGEN
-// } from 'https://cdn.jsdelivr.net/npm/@mitchallen/three-maze-generator@0.1.2/dist/three-maze-generator.modern.js'
-} from '../../dist/three-maze-generator.modern.js';
+} from 'https://cdn.jsdelivr.net/npm/@mitchallen/three-maze-generator@0.1.2/dist/three-maze-generator.modern.js'
+// } from '../../dist/three-maze-generator.modern.js';
 
 import {
   XRKIT,
