@@ -19,6 +19,10 @@ ThreeJS Maze Generator
   </a>
 </p>
 
+# Live Demo
+
+* https://mitchallen.github.io/three-maze-generator/
+
 # Usage
 
 ## Include maze generator dependency
